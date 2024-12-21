@@ -683,6 +683,10 @@ local function loadScratchpad()
         end
     end
 
+    local function loadwptsgil()
+        loadCoordinates()
+    end
+
     local function setVisible(b)
         window:setVisible(b)
     end
@@ -1039,6 +1043,16 @@ local function loadScratchpad()
                     end
                 end
             )
+        end
+
+        -- enter waypoints
+        if config.hotkeyLoadWaypoints then
+         window:addHotKeyCallback(
+             config.hotkeyLoadWaypoints,
+             function()
+                loadwptsgil()
+             end
+         )
         end
 
         -- add reload pages hotkey
